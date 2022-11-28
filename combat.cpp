@@ -9,11 +9,15 @@ void Combat::damage()
 
 }
 
+void start_combat() {
+    if (combat == true) {
+        
+    }
+}
+
 Combat::Combat()
 {
-    if (combat == true) {
-          load("combat.png")
-    }
+
 }
 
 Combat::~Combat()
@@ -31,11 +35,3 @@ int Combat::load()
     }
 }
 
-
-sf::Sprite Combat::GetSprite(int i, int j)
-{
-    this->sprite.setTexture(this->texture);
-    this->sprite.setScale(0.4f, 0.4f);
-    this->sprite.setPosition(i * SIZE_TILE, j * SIZE_TILE);
-    return this->sprite;
-}
