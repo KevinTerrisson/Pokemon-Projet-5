@@ -5,11 +5,13 @@ class Combat {
 
 private:
 
-	bool combat;
+	sf::Texture texture;
+	sf::Sprite sprite;
 
-	void damage();
+public:
+
 	Combat();
 	~Combat();
 
-
+	int load();
 };

@@ -3,6 +3,8 @@
 #include "Perso.h"
 #include "const.h"
 #include "Decor.h"
+#include "combat.h"
+#include "Pokemon.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -23,14 +25,16 @@ sprite.setOrigin(sf::Vector2f(25.f, 25.f));                     //change le poin
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(WINDOW_SIZE_X, WINDOW_SIZE_Y), "SFML works!");
-    Playground pg;
+   // sf::RenderWindow window(sf::VideoMode(WINDOW_SIZE_X, WINDOW_SIZE_Y), "SFML works!");
+   // Playground pg;
+
+    Combat font;
 
     //test
 
-    pg.load();
+   /* pg.load();
 
-    Perso poke("texture/trainer.png");
+    Perso perso("texture/trainer.png");
     Decor rock1("texture/pokemon_rock.png", false, 300, 300);
     window.setFramerateLimit(30);
         
@@ -44,7 +48,7 @@ int main()
             case sf::Event::Closed:
                 window.close();
                 break;
-                //test
+                
             case sf::Event::KeyPressed:
                 poke.move();
                 break;
@@ -55,7 +59,7 @@ int main()
 
             }
         }
-        sf::Sprite perso_sprite = poke.sprite();
+        sf::Sprite perso_sprite = perso.sprite();
         sf::Sprite rock1_sprite = rock1.sprite();
 
         sf::FloatRect perso_box = perso_sprite.getGlobalBounds();
@@ -68,10 +72,45 @@ int main()
                 window.draw(pg.GetSprite(i, j));
             }
         }
+        */
+        font.load();
+
+        Pokemon poke("texture/Nucleos.png");
+        Pokemon poke2("texture/Nucleos.png");
+        window.setFramerateLimit(30);
+
+        while (window.isOpen())
+        {
+            sf::Event event;
+            while (window.pollEvent(event))
+            {
+                switch (event.type)
+                {
+                case sf::Event::Closed:
+                    window.close();
+                    break;
+                    //test
+                case sf::Event::KeyPressed:
+                    poke.move();
+                    break;
+
+                default:
+                    poke.pause(poke.last);
+                    break;
+
+                }
+            }
+            sf::Sprite poke_sprite = poke.sprite();
+            sf::Sprite poke2_sprite = poke2.sprite();
+
+            window.clear();
+
+        
+
 
         //window.draw(shape);
-        window.draw(perso_sprite);
-        window.draw(rock1_sprite);
+        //window.draw(perso_sprite);
+        //window.draw(rock1_sprite);
         window.display();
     }
 
