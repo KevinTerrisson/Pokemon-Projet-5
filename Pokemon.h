@@ -11,16 +11,12 @@ protected:
 
 
 	int PV;
-	int attack;
-	int attack_spe;
-	int defence;
-	int defence_spe;
-	int vitesse;
-	int niveau;
+	bool live;
 
 	
 private:
 
+	void alive();
 	sf::Texture texture_Pokemon;
 	sf::Sprite sprite_Pokemon;
 	int x;

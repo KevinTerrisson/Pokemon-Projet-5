@@ -5,6 +5,8 @@ class Combat {
 
 private:
 
+	int figth;
+
 	sf::Texture texture;
 	sf::Sprite sprite;
 
@@ -14,4 +16,7 @@ public:
 	~Combat();
 
 	int load();
+
+	int bouton();
+
 };

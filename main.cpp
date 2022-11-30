@@ -5,6 +5,8 @@
 #include "Decor.h"
 #include "combat.h"
 #include "Pokemon.h"
+#include "Capaciter.h"
+#include "figthMenu.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -29,6 +31,7 @@ int main()
    // Playground pg;
 
     Combat font;
+    Capaciter f;
 
     //test
 
@@ -103,12 +106,42 @@ int main()
             sf::Sprite poke_sprite = poke.sprite();
             sf::Sprite poke2_sprite = poke2.sprite();
 
+
+            
+                while (font.figth == true)
+                {
+                    if (event.type == Event::KeyReleased)
+                    {
+                        if (event.key.code == Keyboard::Up)
+                        {
+                            mainMenu.MoveUp();
+                            break;
+                        }
+
+                        if (event.key.code == Keyboard::Down)
+                        {
+                            mainMenu.MoveDown();
+                            break;
+                        }
+
+                        if (event.key.code == Keyboard::Return)
+                        {
+                            if (x == 0) {
+                                f.damage();
+                            }
+
+                            else if (x==1)
+                            {
+                             font.figth = false;
+                            }
+                }
+
             window.clear();
 
+
+
         
-
-
-        //window.draw(shape);
+        window.draw(shape);
         //window.draw(perso_sprite);
         //window.draw(rock1_sprite);
         window.display();

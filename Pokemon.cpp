@@ -3,19 +3,12 @@
 
 //stats nucleos
 PV = 152;
-attack = 82;
-attack_spe = 157;
-defence = 105 ;
-defence_spe = 102 ;
-vitesse = 72 ;
-//type = "PSY" ;
-niveau = 50 ;
-
+bool = true;
 
 Pokemon::Pokemon(std::string nom_texture)
 {
-    x = 58;
-    y = 55;
+    x = 700;
+    y = 700;
     if (!this->texture_pokemon.loadFromFile(nom_texture))
     {
         std::cout << "Erreur de chargement de la texture du personnage" << std::endl;
@@ -29,7 +22,16 @@ Pokemon::~Pokemon()
 
 }
 
+void Pokemon::alive()
+{
+    if (live = !true) {
+        //stope le jeu car plus de pokemon en vie
+        count << "vous n'avez plus de pokemon, vous avez perdu ! Vous devez 1700000000 poke$"
+    }
+}
+
 sf::Sprite Pokemon::sprite()
 {
     return this->sprite_pokemon;
 }
+

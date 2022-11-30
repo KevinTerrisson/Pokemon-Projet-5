@@ -2,6 +2,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 
+figth = false;
 
 Combat::Combat()
 {
@@ -20,6 +21,3 @@ int Combat::load()
         return EXIT_FAILURE;
     }
 }
-
-
-
