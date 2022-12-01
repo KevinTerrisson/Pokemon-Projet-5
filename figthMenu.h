@@ -11,21 +11,14 @@ class menuFigth {
 private:
 
     int selctMenu();
-     MenuFigth();
-     ~MenuFigth();
+     menuFigth();
+     ~menuFigth();
 
 public:
 
-   
-
-    void draw(sf::RenderWindow& window);
-    void MoveUp();
-    void MoveDown();
-
+    int draw(sf::RenderWindow& window);
+    int MoveUp();
+    int MoveDown();
+    int bouton();
 };
 
-int Combat::bouton()
-{
-    sf::RectangleShape rectangle(sf::Vector2f(120.f, 50.f));
-    rectangle.setSize(sf::Vector2f(100.f, 100.f));
-}

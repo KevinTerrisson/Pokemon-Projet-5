@@ -10,6 +10,6 @@ public:
 	
 private:
 
-	void damage();
+	int damage();
 
 };

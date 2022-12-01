@@ -6,8 +6,8 @@
 #include "combat.h"
 #include "Pokemon.h"
 #include "Capaciter.h"
-#include "figthMenu.h"
 #include "Game.h"
+#include "figthMenu.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -52,14 +52,6 @@ int main()
             case sf::Event::Closed:
                 window.close();
                 break;
-                
-            case sf::Event::KeyPressed:
-                poke.move();
-                break;
-
-            default:
-                poke.pause(poke.last);
-                break;
 
             }
         }
@@ -74,8 +66,8 @@ int main()
        
         font.load();
 
-        Pokemon poke("texture/Nucleos.png");
-        Pokemon poke2("texture/Nucleos.png");
+        Pokemon poke("texture/Nucleos.png"); //img ramplacable juste penser a modfif le lien
+        Pokemon poke2("texture/Nucleos.png");   //img ramplacable juste penser a modfif le lien
         window.setFramerateLimit(30);
 
         while (window.isOpen())

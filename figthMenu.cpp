@@ -1,4 +1,6 @@
 #include "figthMenu.h"
+#include "Game.h"
+#include <SFML/Graphics.hpp>
 
 int menuFigth::selctMenu()
 {
@@ -24,22 +26,22 @@ menuFigth::MainMenu()
 
 }
 
-menuFigth::MenuFigth()
+menuFigth::menuFigth()
 {
 }
 
-menuFigth::~MenuFigth()
+menuFigth::~menuFigth()
 {
 }
 
-void menuFigth::draw(sf::RenderWindow& window)
+int menuFigth::draw(sf::RenderWindow& window)
 {
 	for (int i = 0; i < 2; ++i) {
 		window.draw(menuFigth[i]);
 	}
 }
 
-void menuFigth::MoveUp()
+int menuFigth::MoveUp()
 {
 	if (selctMenu - 1 >= -1) {
 		MainMenu[selctMenu].setFillColor(Color::White);
@@ -52,7 +54,7 @@ void menuFigth::MoveUp()
 	}
 }
 
-void menuFigth::MoveDown()
+int menuFigth::MoveDown()
 {
 	if (selctMenu + 1 >= 0) {
 		MainMenu[selctMenu].setFillColor(Color::White);
@@ -63,4 +65,11 @@ void menuFigth::MoveDown()
 		}
 		MainMenu[selctMenu].setFillColor(Color::black);
 	}
+}
+
+
+int menuFigth::bouton()
+{
+	sf::RectangleShape rectangle(sf::Vector2f(120.f, 50.f));
+	rectangle.setSize(sf::Vector2f(100.f, 100.f));
 }

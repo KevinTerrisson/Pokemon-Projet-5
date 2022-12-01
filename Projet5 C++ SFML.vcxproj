@@ -137,14 +137,19 @@
     <ClCompile Include="combat.cpp" />
     <ClCompile Include="Decor.cpp" />
     <ClCompile Include="figthMenu.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Perso.cpp" />
     <ClCompile Include="Playground.cpp" />
     <ClCompile Include="Pokemon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Capaciter.h" />
+    <ClInclude Include="combat.h" />
     <ClInclude Include="const.h" />
     <ClInclude Include="Decor.h" />
+    <ClInclude Include="figthMenu.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="macro.h" />
     <ClInclude Include="Perso.h" />
     <ClInclude Include="Playground.h" />

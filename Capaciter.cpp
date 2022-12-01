@@ -1,14 +1,22 @@
 #include "Capaciter.h"
 #include "Pokemon.h"
 
-void Capaciter::damage()
-{
+
+int Capaciter::damage()
+{	
 	puissance = 50;
 	precision = 80;
-	nom = "Charge"
+	
 
 	// calcule les degat de la capacité
-	damage = random(35; 50);
-	PV = PV - damage;
+	degats = random(35; 50);
 
+	if (1 < random(100) < 80) {
+		cout << "toucher";
+		PV = PV - degats;
+	}
+	else {
+		cout << "miss";
+		degats = 0;
+	}
 }
