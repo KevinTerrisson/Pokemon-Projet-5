@@ -1,11 +1,12 @@
 #pragma once
+#include "Game.h"
 #include "combat.cpp"
 
 class Combat {
 
 private:
 
-	int figth;
+	bool figth;
 
 	sf::Texture texture;
 	sf::Sprite sprite;

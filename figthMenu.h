@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "Game.h"
+
 
 #define Max_menu 2
 
@@ -9,12 +11,12 @@ class menuFigth {
 private:
 
     int selctMenu();
-    
+     MenuFigth();
+     ~MenuFigth();
 
 public:
 
-    MenuFigth();
-    ~MenuFigth();
+   
 
     void draw(sf::RenderWindow& window);
     void MoveUp();

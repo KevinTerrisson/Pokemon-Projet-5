@@ -2,7 +2,7 @@
 #include <string>
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
-
+#include "Game.h"
 #include "Perso.h"
 
 Perso::Perso(std::string nom_texture)

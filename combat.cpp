@@ -2,7 +2,6 @@
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 
-figth = false;
 
 Combat::Combat()
 {
@@ -14,7 +13,7 @@ Combat::~Combat()
 
 int Combat::load()
 {
-
+    figth = true; //true pour lancer directe le combat modification a aporter avec votre code
     if (!this->texture.loadFromFile("combat.png"))
     {
         std::cout << "erreur d'image" << std::endl;

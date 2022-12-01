@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Game.h"
 #include "Pokémon.cpp"
 
 class Pokemon{

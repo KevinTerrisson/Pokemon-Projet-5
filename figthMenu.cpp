@@ -8,18 +8,18 @@ int menuFigth::selctMenu()
 menuFigth::MainMenu()
 {
 	//Attaque
-	mainMenu[0].setFont(font);
-	mainMenu[0].setFillColor(Color::White);
-	mainMenu[0].setString("Attaque");
-	mainMenu[0].setCharacterSize(30);
-	mainMenu[0].setPosition(105, 800);
+	MainMenu[0].setFont(font);
+	MainMenu[0].setFillColor(Color::White);
+	MainMenu[0].setString("Attaque");
+	MainMenu[0].setCharacterSize(30);
+	MainMenu[0].setPosition(105, 800);
 
-	//Options
-	mainMenu[1].setFont(font);
-	mainMenu[1].setFillColor(Color::White);
-	mainMenu[1].setString("Options");
-	mainMenu[1].setCharacterSize(30);
-	mainMenu[1].setPosition(105, 850);
+	//Fuite
+	MainMenu[1].setFont(font);
+	MainMenu[1].setFillColor(Color::White);
+	MainMenu[1].setString("Fuite");
+	MainMenu[1].setCharacterSize(30);
+	MainMenu[1].setPosition(105, 850);
 
 
 }
@@ -34,33 +34,33 @@ menuFigth::~MenuFigth()
 
 void menuFigth::draw(sf::RenderWindow& window)
 {
-	for (int i = 0; i < Max_main_menu; ++i) {
-		window.draw(mainMenu[i]);
+	for (int i = 0; i < 2; ++i) {
+		window.draw(menuFigth[i]);
 	}
 }
 
 void menuFigth::MoveUp()
 {
-	if (MainMenuSelected - 1 >= -1) {
-		mainMenu[MainMenuSelected].setFillColor(Color::White);
+	if (selctMenu - 1 >= -1) {
+		MainMenu[selctMenu].setFillColor(Color::White);
 
-		MainMenuSelected--;
-		if (MainMenuSelected == -1) {
-			MainMenuSelected = 2;
+		selctMenu--;
+		if (selctMenu == -1) {
+			selctMenu = 2;
 		}
-		mainMenu[MainMenuSelected].setFillColor(Color::Blue);
+		MainMenu[selctMenu].setFillColor(Color::black);
 	}
 }
 
 void menuFigth::MoveDown()
 {
-	if (MainMenuSelected + 1 >= 0) {
-		mainMenu[MainMenuSelected].setFillColor(Color::White);
+	if (selctMenu + 1 >= 0) {
+		MainMenu[selctMenu].setFillColor(Color::White);
 
-		MainMenuSelected++;
-		if (MainMenuSelected == 3) {
-			MainMenuSelected = 0;
+		selctMenu++;
+		if (selctMenu == 3) {
+			selctMenu = 0;
 		}
-		mainMenu[MainMenuSelected].setFillColor(Color::Blue);
+		MainMenu[selctMenu].setFillColor(Color::black);
 	}
 }

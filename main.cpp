@@ -7,6 +7,7 @@
 #include "Pokemon.h"
 #include "Capaciter.h"
 #include "figthMenu.h"
+#include "Game.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -39,14 +40,14 @@ int main()
 
     Perso perso("texture/trainer.png");
     Decor rock1("texture/pokemon_rock.png", false, 300, 300);
-    window.setFramerateLimit(30);
+    window.setFramerateLimit(30);*/
         
     while (window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type)
+            switch (event.type) 
             {
             case sf::Event::Closed:
                 window.close();
@@ -62,20 +63,15 @@ int main()
 
             }
         }
-        sf::Sprite perso_sprite = perso.sprite();
+        /*sf::Sprite perso_sprite = perso.sprite();
         sf::Sprite rock1_sprite = rock1.sprite();
 
         sf::FloatRect perso_box = perso_sprite.getGlobalBounds();
         sf::FloatRect rock1_box = rock1_sprite.getGlobalBounds();
+ */
 
-
-        window.clear();
-        for (int i = 0; i < WINDOW_SIZE_Y / SIZE_TILE; i++) {
-            for (int j = 0; j < WINDOW_SIZE_X / SIZE_TILE; j++) {
-                window.draw(pg.GetSprite(i, j));
-            }
-        }
-        */
+      
+       
         font.load();
 
         Pokemon poke("texture/Nucleos.png");
@@ -87,27 +83,6 @@ int main()
             sf::Event event;
             while (window.pollEvent(event))
             {
-                switch (event.type)
-                {
-                case sf::Event::Closed:
-                    window.close();
-                    break;
-                    //test
-                case sf::Event::KeyPressed:
-                    poke.move();
-                    break;
-
-                default:
-                    poke.pause(poke.last);
-                    break;
-
-                }
-            }
-            sf::Sprite poke_sprite = poke.sprite();
-            sf::Sprite poke2_sprite = poke2.sprite();
-
-
-            
                 while (font.figth == true)
                 {
                     if (event.type == Event::KeyReleased)
@@ -123,24 +98,33 @@ int main()
                             mainMenu.MoveDown();
                             break;
                         }
-
-                        if (event.key.code == Keyboard::Return)
+                        if (event.key.code == Keyboard::Enter)
                         {
                             if (x == 0) {
                                 f.damage();
                             }
 
-                            else if (x==1)
+                            else if (x == 1)
                             {
-                             font.figth = false;
+                                font.figth = false;
                             }
+                        }
                 }
+            }
+            sf::Sprite poke_sprite = poke.sprite();
+            sf::Sprite poke2_sprite = poke2.sprite();
+
 
             window.clear();
 
 
 
-        
+          window.clear();
+        for (int i = 0; i < WINDOW_SIZE_Y / SIZE_TILE; i++) {
+            for (int j = 0; j < WINDOW_SIZE_X / SIZE_TILE; j++) {
+                window.draw(font.GetSprite(i, j));
+            }
+        }
         window.draw(shape);
         //window.draw(perso_sprite);
         //window.draw(rock1_sprite);
